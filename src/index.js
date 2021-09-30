@@ -117,11 +117,11 @@ function GooglePlacesTypeahead({
         [googleService.current]
     )
 
-    const handleSelect = useCallback(item => {
+    const handleSelect = (item) => {
         removeSuggestions()
         onChange(item.description)
         onSelect(item)
-    }, [])
+    }
 
     const handleKeyboardNavigation = useCallback(
         evt => {
@@ -217,7 +217,7 @@ function GooglePlacesTypeahead({
         ]
     )
 
-    const getSuggestionItemProps = useCallback((item, props = {}) => {
+    const getSuggestionItemProps = (item, props = {}) => {
         const { onClick, onMouseOver, ...extraProps } = props
         return {
             ...extraProps,
@@ -236,7 +236,7 @@ function GooglePlacesTypeahead({
                 }
             }
         }
-    }, [])
+    }
 
     return children({
         suggestions,
